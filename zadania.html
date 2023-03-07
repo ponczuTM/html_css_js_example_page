@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=0.5">
+
+<html lang="pl">
+   <head>
+      <title>FOTOGRAFIA</title>
+      <link href="style.css" rel="stylesheet" >
+   </head>
+   <body>
+      <center>
+         <center>
+            <h2 style="color: blue; font-size: 3.5em">
+            FOTOGRAFIA
+            <h2>
+         </center>
+      </center>
+      <center>
+         <br><br>
+         <a href="index.html" style="font-size: 2em;" >STRONA G&#321;&#211;WNA</a>
+         <a href="omnie.html" style="font-size: 2em; margin: 0px 0px 0px 50px;" >O MNIE</a>
+         <a href="kalkulator.html" style="font-size: 2em; margin: 0px 0px 0px 50px;">KALKULATOR</a><br>
+         <a href="lokalizacja.html" style="font-size: 2em; margin:">LOKALIZACJA</a>
+         <a href="zadania.html" style="font-size: 2em; margin: 0px 0px 0px 50px;">ZADANIA</a>
+      </center>
+      <br><br><br>
+      <img src="aparat.jpg">
+      <h5 style="font-size: 35px;">
+         Zadanie 3:
+         <script>
+            function spalanie()
+            {
+             var paliwo = document.getElementById("paliwo").value;
+             var kilometry = document.getElementById("kilometry").value;
+             var out = document.getElementById( "wynik" );
+            
+             if(isNaN( paliwo ) || isNaN( kilometry ) || paliwo === "" || kilometry === "")
+             out.innerHTML = "TU JEST BŁĄD! <br>Podaj ilość kilometrów i spalanie (l/100km)";
+             else
+             {
+             if(kilometry != 0)
+             {
+             var wynik = ( Math.abs( paliwo ) ) /100 * Math.abs( kilometry );
+             out.innerHTML = "Twoja fura spali: " + wynik.toFixed( 2 ) + " l";
+             }
+             else
+             out.innerHTML = "BŁĄD";
+             }
+            }
+         </script>
+         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Paliwo : <input type="text" id="paliwo" />spalanie litrów/100km</p>
+         <p>Ilość kilometrów: <input type="text" id="kilometry" /> do przejechania </p>
+         <input class="guzik" type="button" value="Oblicz" onclick="spalanie()" />
+         <p id="wynik"></p>
+         <br><br><br><br>
+         <script>
+            let zajecia = new Object();
+            
+            zajecia.wyklady = [
+                "Algebra Liniowa z Geometri&#261; Analityczn&#261;",
+                "Algorytmy i Struktury Danych",
+                "Analiza Matematyczna I",
+                "Matematyka Dyskretna",
+                "Programowanie I",
+                "Podstawy System&#243;w Operacyjnych"
+            ];
+            
+            zajecia.cwiczenia = [
+                "Algebra Liniowa z Geometri&#261; Analityczn&#261;",
+                "Matematyka dyskretna",
+                "Analiza Matematyczna I"
+            ];
+            
+            zajecia.laby = [
+                "Algorytmy i struktury danych",
+                "Podstawy projektowania stron www",
+                "Programowanie I",
+                "Systemy operacyjne",
+            ];
+         </script>
+         <p>Wyk&#322;ady:</p>
+         <br>
+         <div id="wyklady" class="konwerter"></div>
+         <script>
+            kontener = document.getElementById("wyklady");
+            lista = document.createElement('ul');
+            iloscW = zajecia.wyklady.length
+            kontener.appendChild(lista)
+            
+            for(i = 0; i < iloscW; i++){
+                przedmiot = document.createElement('li');
+                przedmiot.innerHTML = zajecia.wyklady[i];
+                lista.appendChild(przedmiot);
+            }
+         </script>
+         <p>&#262;wiczenia:</p>
+         <br>
+         <div id="cwiczenia" class="konwerter"></div>
+         <script>
+            kontener = document.getElementById("cwiczenia");
+            lista = document.createElement('ul');
+            iloscC = zajecia.cwiczenia.length
+            kontener.appendChild(lista)
+            
+            for(i = 0; i < iloscC; i++){
+                przedmiot = document.createElement('li');
+                przedmiot.innerHTML = zajecia.cwiczenia[i];
+                lista.appendChild(przedmiot);
+            }
+         </script>
+         <p>Laboratoria</p>
+         <br>
+         <div id="laby" class="konwerter"></div>
+         <script>
+            kontener = document.getElementById("laby");
+            lista = document.createElement('ul');
+            iloscL = zajecia.laby.length
+            kontener.appendChild(lista)
+            
+            for(i = 0; i < iloscL; i++){
+                przedmiot = document.createElement('li');
+                przedmiot.innerHTML = zajecia.laby[i];
+                lista.appendChild(przedmiot);
+            }
+         </script> 
+
+         <br><br><br><br><br><br><br><br><br><br><br><br>
+         <center><em> Copyright&#169; by Oliwer Mroczkowski, wszystkie prawa zastrzeżone </em></center>
+      </h5>
+      <p style="color:white;     margin-left: 20%;    margin-right: 20%; text-align:justify"></p>
+      <img src="tlo.jpg" alt="zdjęcie w tle" ><img src="tlo.jpg" alt="zdjęcie w tle" ><img src="tlo.jpg" alt="zdjęcie w tle" >
+      </head>
+   </body>
+</html>

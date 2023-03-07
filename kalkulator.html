@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html lang="pl">
+   <head>
+      <title>FOTOGRAFIA</title>
+      <link href="style.css" rel="stylesheet" >
+<meta name="viewport" content="width=device-width, initial-scale=0.5">
+
+   </head>
+   <body>
+      <center>
+         <center>
+            <h2 style="color: blue; font-size: 3.5em">
+            FOTOGRAFIA
+            <h2>
+         </center>
+      </center>
+      <center>
+         <br><br>
+         <a href="index.html" style="font-size: 2em;" >STRONA G&#321;&#211;WNA</a>
+         <a href="omnie.html" style="font-size: 2em; margin: 0px 0px 0px 50px;" >O MNIE</a>
+         <a href="kalkulator.html" style="font-size: 2em; margin: 0px 0px 0px 50px;">KALKULATOR</a><br>
+         <a href="lokalizacja.html" style="font-size: 2em; margin:">LOKALIZACJA</a>
+         <a href="zadania.html" style="font-size: 2em; margin: 0px 0px 0px 50px;">ZADANIA</a>
+      </center>
+      <br><br><br>
+      <img src="aparat.jpg">
+      <h5 style="font-size: 35px; text-align:justify">
+         <script>
+            function liczenie()
+            {
+             var obiektywy = document.getElementById("obiektywy").value;
+             var lustrzanki = document.getElementById("lustrzanki").value;
+             var out = document.getElementById( "cena" );
+            
+             if(isNaN( obiektywy ) || isNaN( lustrzanki ) || obiektywy === "" || lustrzanki === "")
+             out.innerHTML = "TU JEST BŁĄD! <br>Podaj ilość obiektywów i lustrznek";
+             else
+            {
+             var cena = ( Math.abs( obiektywy ) )* 7999.99  + 5549.99 * Math.abs( lustrzanki );
+             out.innerHTML = "zapłacisz: " + cena.toFixed( 2 ) + " zł";
+             }
+            }
+         </script>
+         Zakładamy, że lustrzanka to koszt rzędu 5549.99zł, a obiektyw 7999.99zł<br>
+         Sprawdź, ile zaplacisz za zestaw lustrzanek i obiektywów:
+         <p>ilość obiektywow : <input type="text" id="obiektywy" /></p>
+         <p>Ilość lustrzanek: <input type="text" id="lustrzanki" />  </p>
+         <input class="guzik" type="button" value="Oblicz" onclick="liczenie()" />
+         <p id="cena"></p>
+         <br><br>
+         <br> <br>Za pomocą tego przycisku dowiesz się, ile kosztuje konkretny obiektyw:
+         <select id="wybor2">
+            <div class="select">
+               <option>Wybierz obiektyw, aby poznać jego koszt</option>
+            </div>
+            <option value='Sigma 100mm'>Sigma 100mm</option>
+            <option value='Sigma 150mm'>Sigma 150mm</option>
+            <option value='Sigma 200mm'>Sigma 200mm</option>
+            <option value='Sigma 250mm'>Sigma 250mm</option>
+            <option value='Sigma 300mm'>Sigma 300mm</option>
+            <option value='Sigma 350mm'>Sigma 350mm</option>
+            <option value='Sigma 400mm'>Sigma 400mm</option>
+            <option value='Sigma 450mm'>Sigma 450mm</option>
+            <option value='Sigma 500mm'>Sigma 500mm</option>
+            <option value='Sigma 550mm'>Sigma 550mm</option>
+            <option value='Sigma 600mm'>Sigma 600mm</option>
+            <option value='Sigma 650mm'>Sigma 650mm</option>
+            <option value='Sigma 700mm'>Sigma 700mm</option>
+            <option value='Sigma 750mm'>Sigma 750mm</option>
+            <option value='Sigma 800mm'>Sigma 800mm</option>
+         </select>
+         </form>
+         <div id="cena2"></div>
+         <script>
+            var wybor = document.getElementById('wybor2');
+            var cena = document.getElementById('cena2');
+            wybor.onchange=function() {
+                if(wybor.value==='Sigma 100mm') {
+                   cena.innerHTML='<br>za ten obiektyw należy zapłacić 5000,00zł';
+                }
+                if(wybor.value==='Sigma 150mm') {
+                   cena.innerHTML='<br>za ten obiektyw należy zapłacić 5500,00zł';
+                }
+                if(wybor.value==='Sigma 200mm') {
+                   cena.innerHTML='<br>za ten obiektyw należy zapłacić 6000,00zł';
+                }
+                if(wybor.value==='Sigma 250mm') {
+                   cena.innerHTML='<br>za ten obiektyw należy zapłacić 6500,00zł';
+                }
+                if(wybor.value==='Sigma 300mm') {
+                   cena.innerHTML='<br>za ten obiektyw należy zapłacić 7000,00zł';
+                }
+                if(wybor.value==='Sigma 350mm') {
+                   cena.innerHTML='<br>za ten obiektyw należy zapłacić 7600,00zł';
+                }
+                if(wybor.value==='Sigma 400mm') {
+                   cena.innerHTML='<br>za ten obiektyw należy zapłacić 7900,00zł';
+                }
+                if(wybor.value==='Sigma 450mm') {
+                   cena.innerHTML='<br>za ten obiektyw należy zapłacić 8100,00zł';
+                }
+                if(wybor.value==='Sigma 500mm') {
+                   cena.innerHTML='<br>za ten obiektyw należy zapłacić 8500,00zł';
+                }
+                if(wybor.value==='Sigma 550mm') {
+                   cena.innerHTML='<br>za ten obiektyw należy zapłacić 9500,00zł';
+                }
+                if(wybor.value==='Sigma 600mm') {
+                   cena.innerHTML='<br>za ten obiektyw należy zapłacić 9900,00zł';
+                }
+                if(wybor.value==='Sigma 650mm') {
+                   cena.innerHTML='<br>za ten obiektyw należy zapłacić 10200,00zł';
+                }
+                if(wybor.value==='Sigma 700mm') {
+                   cena.innerHTML='<br>za ten obiektyw należy zapłacić 10900,00zł';
+                }
+                if(wybor.value==='Sigma 750mm') {
+                   cena.innerHTML='<br>za ten obiektyw należy zapłacić 12000,00zł';
+                }
+                if(wybor.value==='Sigma 800mm') {
+                   cena.innerHTML='<br>za ten obiektyw należy zapłacić 12800,00zł';
+                }
+                
+            }
+         </script>
+         </div>
+         </div>
+         <br><br><br>
+         <center><em> Copyright&#169; by Oliwer Mroczkowski, wszystkie prawa zastrzeżone </em></center>
+      </h5>
+      <p style="color:white;     margin-left: 20%;    margin-right: 20%; text-align:justify"></p>
+      <img src="tlo.jpg" alt="zdjęcie w tle" >
+      </head>
+   </body>
+</html>

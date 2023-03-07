@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=0.5">
+
+<html lang="pl">
+   <head>
+      <title>FOTOGRAFIA</title>
+      <link href="style.css" rel="stylesheet" >
+   </head>
+   <body>
+      <center>
+         <center>
+            <h2 style="color: blue; font-size: 3.5em">
+            FOTOGRAFIA
+            <h2>
+         </center>
+      </center>
+      <center>
+         <br><br>
+         <a href="index.html" style="font-size: 2em;" >STRONA G&#321;&#211;WNA</a>
+         <a href="omnie.html" style="font-size: 2em; margin: 0px 0px 0px 50px;" >O MNIE</a>
+         <a href="kalkulator.html" style="font-size: 2em; margin: 0px 0px 0px 50px;">KALKULATOR</a><br>
+         <a href="lokalizacja.html" style="font-size: 2em; margin:">LOKALIZACJA</a>
+         <a href="zadania.html" style="font-size: 2em; margin: 0px 0px 0px 50px;">ZADANIA</a>
+      </center>
+      <br><br><br>
+      <img src="aparat.jpg">
+      <h5 style="font-size: 35px; text-align:justify">
+         lokalizacja - nasze biuro mieści się w miejscowości Toruń, na ulicy Mickiewicza 4.<br>
+         Aby poznać swoją lokalizację naciśnij przycisk<br>
+         <a onclick="getLocation()" href="#" class="guzik">LOKALIZACJA</a><br><br> jak to wykorzystać? Skopiuj szerokość i długość geograficzną, wejdź na stronę <a style="color: lightblue; font-size: 40px" target="blank_"; href="https://www.wspolrzedne.pl/">wspolrzedne.pl</a> i wyznacz do nas trasę! 
+         <p id="lokal"></p>
+         <script>
+            var x = document.getElementById("lokal");
+            
+            function getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                } else {
+                    x.innerHTML = "Niestety, Twoja przegladarka tego nie obsluguje";
+                }
+            }
+            
+            function showPosition(position) {
+                x.innerHTML = "Szeroko&#347;&#263; goegraficzna: " + position.coords.latitude + "<br>D&#322;ugo&#347;&#263; geograficzna: " + position.coords.longitude + "<br><br>Spokojnie, Twoja lokalizacja nie b&#281;dzie nigdzie zapisywana ani udost&#281;pniana...<br> Chyba, że ją skopiujesz - wtedy będzie zapisana w Twoim schowku" ;
+            }
+         </script>
+         <p id="lokal"></p>
+         <script>
+            function clickCounter() {
+              if (typeof(Storage) !== "undefined") {
+                if (localStorage.clickcount) {
+                  localStorage.clickcount = Number(localStorage.clickcount)+1;
+                } else {
+                  localStorage.clickcount = 1;
+                }
+                document.getElementById("result").innerHTML = "ilość naciśnięć spustu migawki: " + localStorage.clickcount + ".";
+              } else {
+                document.getElementById("result").innerHTML = "Niestety, Twoja przegladarka tego nie obsluguje";
+              }
+            }
+         </script>
+         </head>
+         <body>
+            <br><br><br><br>
+            Jeśli chcesz przetestować ile razy jesteś w stanie nacisnąć spust mnigawki, aby zrobić jak najwięcej zdjęć, aby później wybrać najlepsze - wystarczy, że będziesz klikał/klikała w guzik z aparatami. Twoje zdjęcia będą naliczane przy każdym kliknięciu
+            <p><button onclick="clickCounter()" type="button" class="guzik">&#128247;	&#128247;	&#128247;	&#128247;	&#128247;	&#128247;</button></p>
+            <div id="result"></div>
+            <br><br><br><br>
+            </center>
+            <center><em> Copyright&#169; by Oliwer Mroczkowski, wszystkie prawa zastrzeżone </em></center>
+      </h5>
+      <p style="color:white;     margin-left: 20%;    margin-right: 20%; text-align:justify"></p>
+      <img src="tlo.jpg" alt="zdjęcie w tle" >
+      </head>
+   </body>
+</html>
